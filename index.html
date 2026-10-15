@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,176 +5,276 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>김구남 | KORAIL 명함</title>
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  padding: 32px 16px;
-  background: #f4f5f7;
-  color: #394958;
-  font-family: Arial, "Malgun Gothic", sans-serif;
-}
-
-.cards {
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  gap: 24px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #aab7c2;
-  aspect-ratio: 1.75 / 1;
-  padding: 6%;
-  position: relative;
-  overflow: hidden;
-}
-
-.front {
-  display: grid;
-  grid-template-columns: 43% 57%;
-}
-
-.logo {
-  color: #0864b5;
-  font-size: clamp(24px, 5vw, 48px);
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -3px;
-}
-
-.website {
-  position: absolute;
-  left: 6%;
-  bottom: 13%;
-  font-size: clamp(10px, 1.8vw, 19px);
-  font-weight: bold;
-}
-
-.details h1 {
-  margin: 0;
-  font-size: clamp(20px, 3.5vw, 34px);
-  letter-spacing: 4px;
-}
-
-.eng-name {
-  margin: 3px 0 20px;
-  font-size: clamp(13px, 2vw, 21px);
-}
-
-.position {
-  font-weight: bold;
-  font-size: clamp(12px, 2vw, 20px);
-}
-
-.eng-position {
-  margin-top: 5px;
-  font-size: clamp(10px, 1.7vw, 18px);
-  line-height: 1.4;
-}
-
-.contact {
-  margin-top: 20px;
-  font-size: clamp(10px, 1.7vw, 18px);
-  line-height: 1.55;
-  overflow-wrap: anywhere;
-}
-
-.back {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.back .logo {
-  margin-bottom: 22px;
-}
-
-.slogan {
-  font-size: clamp(13px, 2.1vw, 21px);
-  font-weight: bold;
-  line-height: 1.55;
-}
-
-.pink { color: #d72c80; }
-.navy { color: #092b75; }
-
-.address {
-  margin-top: 30px;
-  font-size: clamp(10px, 1.7vw, 17px);
-  font-weight: bold;
-  line-height: 1.8;
-}
-
-.address-en {
-  font-weight: normal;
-}
-
-@media (max-width: 480px) {
-  body { padding: 20px 8px; }
-  .card { padding: 4%; }
-  .front { grid-template-columns: 34% 66%; }
-  .website { left: 4%; }
-  .details h1 { letter-spacing: 1px; }
-  .eng-name { margin-bottom: 12px; }
-  .contact { margin-top: 12px; }
-}
+  :root {
+    --korail-blue: #0870b8;
+    --korail-deep: #064b91;
+    --ink: #303b46;
+    --muted: #5d6872;
+    --pink: #cf397f;
+    --line: #cbd2d9;
+    --paper: #fff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 34px 18px 48px;
+    background: #eef1f4;
+    color: var(--ink);
+    font-family: Arial, "Malgun Gothic", "맑은 고딕", sans-serif;
+  }
+  .page { max-width: 1080px; margin: 0 auto; }
+  header { margin: 0 auto 26px; text-align: center; }
+  header h1 { margin: 0 0 8px; font-size: 25px; font-weight: 700; }
+  header p { margin: 0; color: #68737d; font-size: 14px; line-height: 1.6; }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .card-wrap { min-width: 0; }
+  .label {
+    margin: 0 0 9px 2px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #5c6670;
+    letter-spacing: .04em;
+  }
+  .card {
+    width: 100%;
+    aspect-ratio: 90 / 50;
+    background: var(--paper);
+    border: 1px solid #d5dbe1;
+    box-shadow: 0 8px 24px rgba(30, 45, 60, .09);
+    position: relative;
+    overflow: hidden;
+  }
+  .front {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    padding: 7.1% 6.2% 6.3%;
+  }
+  .brand-side { position: relative; min-width: 0; }
+  .korail-logo {
+    width: min(100%, 176px);
+    height: auto;
+    display: block;
+  }
+  .website {
+    position: absolute;
+    left: 0;
+    bottom: 2%;
+    font-size: clamp(9px, 1.05vw, 15px);
+    font-weight: 700;
+    color: #3e4b56;
+    white-space: nowrap;
+  }
+  .details { padding-left: 2.5%; min-width: 0; }
+  .name-ko {
+    margin: -3px 0 1px;
+    font-size: clamp(20px, 2.5vw, 31px);
+    font-weight: 700;
+    letter-spacing: .19em;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+  .name-en {
+    font-size: clamp(11px, 1.35vw, 16px);
+    margin-bottom: clamp(12px, 1.8vw, 20px);
+    color: #303b46;
+  }
+  .role-ko {
+    font-size: clamp(10px, 1.3vw, 15px);
+    font-weight: 700;
+    line-height: 1.45;
+    white-space: nowrap;
+    letter-spacing: -.03em;
+  }
+  .role-en {
+    margin-top: 3px;
+    font-size: clamp(9px, 1.16vw, 13.5px);
+    line-height: 1.35;
+    color: #3c4650;
+  }
+  .contact {
+    margin-top: clamp(11px, 1.6vw, 18px);
+    font-size: clamp(9px, 1.16vw, 13.5px);
+    line-height: 1.5;
+    color: #303b46;
+    white-space: nowrap;
+  }
+  .contact b { font-weight: 700; }
+  .back {
+    padding: 6.2% 5.5% 5.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2.1vw, 25px);
+    width: 100%;
+    margin-top: -1%;
+  }
+  .back-brand .korail-logo { width: 36%; max-width: 190px; }
+  .vertical-rule {
+    width: 1px;
+    height: clamp(28px, 4vw, 45px);
+    background: #707b84;
+    flex: 0 0 1px;
+  }
+  .slogan {
+    font-weight: 700;
+    font-size: clamp(11px, 1.6vw, 18px);
+    line-height: 1.48;
+    letter-spacing: -.04em;
+    white-space: nowrap;
+  }
+  .pink { color: var(--pink); }
+  .navy { color: #102d69; }
+  .address {
+    text-align: center;
+    margin-top: clamp(18px, 3vw, 32px);
+    width: 100%;
+    line-height: 1.65;
+  }
+  .address-ko {
+    font-size: clamp(9px, 1.25vw, 14.5px);
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: -.035em;
+  }
+  .address-en {
+    font-size: clamp(8px, 1.05vw, 12.5px);
+    color: #3d4852;
+    white-space: nowrap;
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0 0;
+    flex-wrap: wrap;
+  }
+  button {
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 16px;
+    background: var(--korail-deep);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button.secondary { background: #fff; color: #34414d; border: 1px solid #c9d1d9; }
+  .note {
+    text-align: center;
+    margin: 17px auto 0;
+    color: #737e88;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  @media (max-width: 720px) {
+    body { padding: 22px 12px 32px; }
+    header h1 { font-size: 21px; }
+    .cards { grid-template-columns: 1fr; gap: 20px; }
+    .front { padding: 7.1% 6.2% 6.3%; }
+    .name-ko { font-size: clamp(20px, 5.4vw, 31px); }
+    .name-en { font-size: clamp(11px, 3vw, 16px); }
+    .role-ko { font-size: clamp(10px, 2.8vw, 15px); }
+    .role-en, .contact { font-size: clamp(9px, 2.45vw, 13.5px); }
+    .website { font-size: clamp(9px, 2.5vw, 15px); }
+    .back-brand .korail-logo { width: 36%; }
+    .slogan { font-size: clamp(11px, 3.5vw, 18px); }
+    .address-ko { font-size: clamp(8px, 2.5vw, 14.5px); }
+    .address-en { font-size: clamp(7px, 2.1vw, 12.5px); }
+  }
+  @media print {
+    @page { size: A4 portrait; margin: 18mm; }
+    body { padding: 0; background: #fff; }
+    header, .actions, .note, .label { display: none !important; }
+    .page { max-width: none; }
+    .cards { display: flex; flex-direction: column; gap: 12mm; }
+    .card-wrap { width: 90mm; }
+    .card { width: 90mm; height: 50mm; aspect-ratio: auto; box-shadow: none; border: .25mm solid #bfc7cf; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .front { padding: 3.55mm 5.58mm 3.15mm; }
+    .korail-logo { width: 31mm; }
+    .website { font-size: 3mm; }
+    .name-ko { font-size: 6.2mm; }
+    .name-en { font-size: 3.2mm; margin-bottom: 3.5mm; }
+    .role-ko { font-size: 3.05mm; }
+    .role-en { font-size: 2.6mm; }
+    .contact { font-size: 2.75mm; margin-top: 3mm; }
+    .back { padding: 3.1mm 4.95mm 2.65mm; }
+    .back-brand { gap: 4mm; }
+    .back-brand .korail-logo { width: 30mm; }
+    .vertical-rule { height: 9mm; }
+    .slogan { font-size: 3.6mm; }
+    .address { margin-top: 6mm; }
+    .address-ko { font-size: 2.8mm; }
+    .address-en { font-size: 2.35mm; }
+  }
 </style>
 </head>
 <body>
-<main class="cards">
+<div class="page">
+  <header>
+    <h1>김구남 · KORAIL 명함</h1>
+    <p>앞면과 뒷면 미리보기 · 브라우저에서 인쇄할 수 있습니다.</p>
+  </header>
 
-  <!-- 앞면 -->
-  <section class="card front">
-    <div>
-      <div class="logo">KORAIL</div>
-      <div class="website">www.korail.com</div>
-    </div>
+  <main class="cards">
+    <section class="card-wrap">
+      <div class="label">앞면 · FRONT</div>
+      <article class="card front">
+        <div class="brand-side">
+          <!-- Wikimedia Commons에 공개된 KORAIL 로고 파일 사용 -->
+          <img class="korail-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Korail_logo.svg" alt="KORAIL 공식 로고">
+          <div class="website">www.korail.com</div>
+        </div>
 
-    <div class="details">
-      <h1>김구남</h1>
-      <div class="eng-name">Gu Nam Kim</div>
+        <div class="details">
+          <div class="name-ko">김구남</div>
+          <div class="name-en">Gu Nam Kim</div>
+          <div class="role-ko">대리 ㅣ 수도단 전자기기연구팀</div>
+          <div class="role-en">Assistant Manager<br>Electronic Equipment Research Team</div>
+          <div class="contact">
+            <div><b>T.</b> 031-810-8641</div>
+            <div><b>M.</b> 010-3487-2636</div>
+            <div><b>E.</b> kgn86@korail.com</div>
+          </div>
+        </div>
+      </article>
+    </section>
 
-      <div class="position">
-        대리 ㅣ 수도단 전자기기연구팀
-      </div>
+    <section class="card-wrap">
+      <div class="label">뒷면 · BACK (선택 2)</div>
+      <article class="card back">
+        <div class="back-brand">
+          <img class="korail-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Korail_logo.svg" alt="KORAIL 공식 로고">
+          <div class="vertical-rule"></div>
+          <div class="slogan">
+            <span class="pink">새로 여는</span> <span class="navy">미래교통</span><br>
+            <span class="pink">함께 하는</span> <span class="navy">한국철도</span>
+          </div>
+        </div>
+        <div class="address">
+          <div class="address-ko">한국철도공사 ㅣ 34618, 대전광역시 동구 중앙로 240</div>
+          <div class="address-en">240, Jungang-ro, Dong-gu, Daejeon, Korea Po. 34618</div>
+        </div>
+      </article>
+    </section>
+  </main>
 
-      <div class="eng-position">
-        Assistant Manager<br>
-        Electronic Equipment Research Team
-      </div>
-
-      <div class="contact">
-        <div><b>T.</b> 031-810-8641</div>
-        <div><b>M.</b> 010-3487-2636</div>
-        <div><b>E.</b> kgn86@korail.com</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 뒷면 -->
-  <section class="card back">
-    <div class="logo">KORAIL</div>
-
-    <div class="slogan">
-      <span class="pink">새로 여는</span>
-      <span class="navy">미래교통</span><br>
-      <span class="pink">함께 하는</span>
-      <span class="navy">한국철도</span>
-    </div>
-
-    <div class="address">
-      한국철도공사 ㅣ 34618, 대전광역시 동구 중앙로 240
-
-      <div class="address-en">
-        240, Jungang-ro, Dong-gu, Daejeon, Korea Po. 34618
-      </div>
-    </div>
-  </section>
-
-</main>
+  <div class="actions">
+    <button onclick="window.print()">인쇄 / PDF로 저장</button>
+    <button class="secondary" onclick="document.querySelector('.front').scrollIntoView({behavior:'smooth',block:'center'})">앞면 보기</button>
+    <button class="secondary" onclick="document.querySelector('.back').scrollIntoView({behavior:'smooth',block:'center'})">뒷면 보기</button>
+  </div>
+  <p class="note">로고 출처: Wikimedia Commons, Korail logo.svg. 실제 인쇄 전에는 회사의 공식 CI 사용 지침을 확인해 주세요.</p>
+</div>
 </body>
 </html>
