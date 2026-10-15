@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김구남 | KORAIL 명함</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: #f4f5f7;
+  color: #394958;
+  font-family: Arial, "Malgun Gothic", sans-serif;
+}
+
+.cards {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #aab7c2;
+  aspect-ratio: 1.75 / 1;
+  padding: 6%;
+  position: relative;
+  overflow: hidden;
+}
+
+.front {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.logo {
+  color: #0864b5;
+  font-size: clamp(24px, 5vw, 48px);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -3px;
+}
+
+.website {
+  position: absolute;
+  left: 6%;
+  bottom: 13%;
+  font-size: clamp(10px, 1.8vw, 19px);
+  font-weight: bold;
+}
+
+.details h1 {
+  margin: 0;
+  font-size: clamp(20px, 3.5vw, 34px);
+  letter-spacing: 4px;
+}
+
+.eng-name {
+  margin: 3px 0 20px;
+  font-size: clamp(13px, 2vw, 21px);
+}
+
+.position {
+  font-weight: bold;
+  font-size: clamp(12px, 2vw, 20px);
+}
+
+.eng-position {
+  margin-top: 5px;
+  font-size: clamp(10px, 1.7vw, 18px);
+  line-height: 1.4;
+}
+
+.contact {
+  margin-top: 20px;
+  font-size: clamp(10px, 1.7vw, 18px);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.back .logo {
+  margin-bottom: 22px;
+}
+
+.slogan {
+  font-size: clamp(13px, 2.1vw, 21px);
+  font-weight: bold;
+  line-height: 1.55;
+}
+
+.pink { color: #d72c80; }
+.navy { color: #092b75; }
+
+.address {
+  margin-top: 30px;
+  font-size: clamp(10px, 1.7vw, 17px);
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+.address-en {
+  font-weight: normal;
+}
+
+@media (max-width: 480px) {
+  body { padding: 20px 8px; }
+  .card { padding: 4%; }
+  .front { grid-template-columns: 34% 66%; }
+  .website { left: 4%; }
+  .details h1 { letter-spacing: 1px; }
+  .eng-name { margin-bottom: 12px; }
+  .contact { margin-top: 12px; }
+}
+</style>
+</head>
+<body>
+<main class="cards">
+
+  <!-- 앞면 -->
+  <section class="card front">
+    <div>
+      <div class="logo">KORAIL</div>
+      <div class="website">www.korail.com</div>
+    </div>
+
+    <div class="details">
+      <h1>김구남</h1>
+      <div class="eng-name">Gu Nam Kim</div>
+
+      <div class="position">
+        대리 ㅣ 수도단 전자기기연구팀
+      </div>
+
+      <div class="eng-position">
+        Assistant Manager<br>
+        Electronic Equipment Research Team
+      </div>
+
+      <div class="contact">
+        <div><b>T.</b> 031-810-8641</div>
+        <div><b>M.</b> 010-3487-2636</div>
+        <div><b>E.</b> kgn86@korail.com</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 뒷면 -->
+  <section class="card back">
+    <div class="logo">KORAIL</div>
+
+    <div class="slogan">
+      <span class="pink">새로 여는</span>
+      <span class="navy">미래교통</span><br>
+      <span class="pink">함께 하는</span>
+      <span class="navy">한국철도</span>
+    </div>
+
+    <div class="address">
+      한국철도공사 ㅣ 34618, 대전광역시 동구 중앙로 240
+
+      <div class="address-en">
+        240, Jungang-ro, Dong-gu, Daejeon, Korea Po. 34618
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
